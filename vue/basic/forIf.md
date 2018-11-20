@@ -7,6 +7,7 @@
 - v-for(會重複把此標籤內的所有+自己進行迴圈)
     - 1.寫法:v-for="個 in 群"
     - 2.寫法:v-for="(個,引數(第幾個)) in 群"
+    
 ```html
 <div id="app">
     <pre>{{list}}</pre>
