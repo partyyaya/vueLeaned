@@ -4,7 +4,7 @@
 - 使用 :class="{'rotate':isTransform}" 進行改變
     - 格式: v-bind:class="{'類別名':布林變數}" (v-bind可簡化成:(冒號)) 
     - 若為true則啟用,false為失效
-- 範例:
+
 ```html
 <div id="app">
   <div class="box" :class="{'rotate':isTransform}"></div>
