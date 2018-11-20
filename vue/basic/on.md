@@ -9,6 +9,7 @@
     - 3.利用v-on使用函數reverseText進行反轉
     - 4.若會觸發預設事件(置頂事件)，則使用prevent避免觸發
     - 5.將接收的變數(newText)輸出至文本上
+    
 ```html
 <div id="app">
   <input type="text" class="form-control" @keydown.enter="reverseText" v-model="text">
