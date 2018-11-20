@@ -8,6 +8,6 @@
     * [v-for 與 v-if](basic/forIf.md)
     * [v-on](basic/on.md)
     * [v-class](basic/class.md)
-    * [computed](basic/computed.md)
-    * [formDataBinding](basic/formDataBinding.md)
+    * [計算功能函數](basic/computed.md)
+    * [表單資料綁定](basic/formDataBinding.md)
 * [參考資料](source.md)
