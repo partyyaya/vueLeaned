@@ -22,7 +22,7 @@ var app = new Vue({
 ```
 - 輸出類型說明
     - 1.text(三種)
-        - {{something}}
+        - ```{{something}}```
         - ```<input type="text" v-model="something">```
         - ```<div v-text="something"></div>```
     - 2.html
