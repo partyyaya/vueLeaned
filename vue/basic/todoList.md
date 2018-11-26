@@ -71,6 +71,7 @@ computed:{
 - 新增修改函數 editTodo 存取使用者欲更改資料 
 - 在 li 新增雙擊事件 @dblclick="editTodo(item)
 - 新增 列表資料 與 input輸入框 互相切換顯示 : v-if="item.id !== cacheTodo.id" 與 v-if="item.id === cacheTodo.id"
+- 在 input 內增加 v-model="cacheTitle" 來讀取使用者修改資料
 - 在 input 內增加 esc離開編輯,enter完成編輯 事件
 
 #### 完成後程式碼
