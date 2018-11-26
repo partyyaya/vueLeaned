@@ -105,7 +105,7 @@ computed:{
 			<li class="list-group-item" v-for="(item,key) in filteredTodos" @dblclick="editTodo(item)">
 				<div class="d-flex" v-if="item.id !== cacheTodo.id">
 					<div class="form-check">
-						<input type="checkbox" class="form-check-input" :id="item.id" v-model="item.completed" @click="prepareComplete(item)">
+						<input type="checkbox" class="form-check-input" :id="item.id" v-model="item.completed">
 						<label class="form-check-label"
 						:class="{'completed':item.completed}" 
 						:for="item.id">
@@ -123,6 +123,19 @@ computed:{
 				@keyup.enter="doneEdit(item)"
 				v-if="item.id === cacheTodo.id">
 			</li>
+			<!-- <li class="list-group-item">
+<div class="d-flex">
+<div class="form-check">
+<input type="checkbox" class="form-check-input" id="a1">
+<label class="form-check-label completed" for="a1">
+Cras justo odio
+</label>
+</div>
+<button type="button" class="close ml-auto" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+</li> -->
 			<li class="list-group-item">
 				<input type="text" class="form-control">
 			</li>
@@ -140,7 +153,6 @@ computed:{
 		data: {
 			newTodo: '',
 			todos: [],
-			totall:0,
 			visibility:'all',
 			cacheTodo:{},
 			cacheTitle:''
@@ -153,7 +165,6 @@ computed:{
 				if (!value) {
 					return;
 				}
-				this.totall+=1;
 				this.todos.push({
 					id: timestamp,
 					title: value,
@@ -162,7 +173,6 @@ computed:{
 				this.newTodo = '';
 			},
 			removeTodo(todo) {
-				this.totall-=1;
 				let vm = this;
 				let newIndex = vm.todos.findIndex(function(item){
 					return todo.id === item.id;
@@ -184,13 +194,6 @@ computed:{
 			removeAllItem(){
 				this.todos = [];
 				this.totall = 0;
-			},
-			prepareComplete(item){
-				if(item.completed === false){
-					this.totall -= 1;
-				}else if(item.completed === true){
-					this.totall += 1;
-				} 
 			}
 		},
 		computed:{
@@ -217,6 +220,19 @@ computed:{
 					})
 					return newTodos;
 				}
+			},
+			totall(){
+				let sum = this.todos.length;
+				if(sum == 0){
+					return sum;
+				}else{
+					this.todos.forEach(function(item){
+						if(item.completed){
+							sum--;
+						}
+					})
+					return sum;
+				}								
 			}
 		}
 	});
