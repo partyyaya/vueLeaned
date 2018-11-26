@@ -8,7 +8,10 @@
   - 增加 methods addTodo 用來增加資料
   - 將 addTodo 放入 button(@click="addTodo") 與 input( @keyup.enter) 方便加入列表資料
   - 將 {{item.title}} 放入label標籤內顯示資料名稱
-  - 將 :for="item.id" 與 :id="item.id" 放入label 與 input 方便辨識各個資料 
+  - 將 :for="item.id" 與 :id="item.id" 放入label 與 input 方便辨識各個資料
+  - 建立 removeTodo 方法 來刪除列表資料
+  - 在 v-for 裡面增加 key => v-for="(item,key) in todos"
+  - 在下面 button 加入 removeTodo 方法並傳入 key 指定刪除此資料
 ```html
 
 ```
