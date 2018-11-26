@@ -68,8 +68,8 @@ computed:{
 #### 實現雙擊修改標題功能
 - 新增預設變數 cacheTodo,cacheTile 存取更改資料
 - 新增修改函數 editTodo 存取使用者欲更改資料 
-- 新增雙擊事件 @dblclick="editTodo(item)
-- 新增 input輸入框 與 列表資料互相切換顯示 : v-if="item.id !== cacheTodo.id" 與 v-if="item.id === cacheTodo.id"
+- 在 li 新增雙擊事件 @dblclick="editTodo(item)
+- 新增 列表資料 與 input輸入框 互相切換顯示 : v-if="item.id !== cacheTodo.id" 與 v-if="item.id === cacheTodo.id"
 - 在 input 內增加 esc離開編輯,enter完成編輯 事件
 ```html
 
