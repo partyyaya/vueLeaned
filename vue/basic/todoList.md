@@ -1,6 +1,6 @@
 ## TodoList 練習
 
-- 實現基本結構
+#### 實現基本結構
   - 建立 資料陣列(todos) 與 暫時資料變數(newtodo)
   - 在 input 使用 v-model 得到使用者輸入字串 
   - 在列表使用 v-for 處理列表資料
