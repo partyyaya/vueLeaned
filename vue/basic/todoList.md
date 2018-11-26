@@ -123,19 +123,6 @@ computed:{
 				@keyup.enter="doneEdit(item)"
 				v-if="item.id === cacheTodo.id">
 			</li>
-			<!-- <li class="list-group-item">
-<div class="d-flex">
-<div class="form-check">
-<input type="checkbox" class="form-check-input" id="a1">
-<label class="form-check-label completed" for="a1">
-Cras justo odio
-</label>
-</div>
-<button type="button" class="close ml-auto" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-</li> -->
 			<li class="list-group-item">
 				<input type="text" class="form-control">
 			</li>
