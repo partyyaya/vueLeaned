@@ -27,7 +27,6 @@
 	text-decoration: line-through;
 }
 </style>
-
 ```
 - 於input checkbox內增加 v-model="item.completed"(當按下時變為true)
 - 於label 增加 :class="{'completed':item.completed}" 來進行切換
@@ -91,7 +90,7 @@ computed:{
 		})
 		return sum;
 	}								
- }
+  }
   ```
 - 將 ```{{totall}}``` 放入 ```<span>``` 之中即可
 
