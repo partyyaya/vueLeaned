@@ -74,6 +74,26 @@ computed:{
 - 在 input 內增加 v-model="cacheTitle" 來讀取使用者修改資料
 - 在 input 內增加 esc離開編輯,enter完成編輯 事件
 
+#### 實現自動計算未完成筆數
+- 在 computed 新增 totall 函數
+
+  ```javascript
+  totall(){
+	let sum = this.todos.length;
+	if(sum == 0){
+		return sum;
+	}else{
+		this.todos.forEach(function(item){
+			if(item.completed){
+				sum--;
+			}
+		})
+		return sum;
+	}								
+ }
+  ```
+- 將 {{totall}} 放入 <span> 之中即可
+
 #### 完成後程式碼
 
 ```html
