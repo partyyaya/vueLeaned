@@ -2,6 +2,20 @@
 
 #### 實現基本結構
 - 建立 資料陣列(todos) 與 暫時資料變數(newtodo)
+
+```javascript
+<script>
+	var app = new Vue({
+		el: '#app',
+		data: {
+			newTodo: '',
+			todos: [],
+		},
+		methods:{},
+		computed:{}
+	});
+</script>
+```
 - 在 input 使用 v-model 得到使用者輸入字串 
 - 在列表使用 v-for 處理列表資料
 - 在 li標籤 建立 v-for循環結構
@@ -33,7 +47,23 @@
   
 #### 實現過濾資料
 - 增加預設全部顯示 : 在 data 內新增 visibility='all'
-- 於 全部.進行中.已完成 連結增加 :class="{'active': visibility =='對應的參數'}" @click="visibility='對應的參數'"
+- 於連結增加 :class="{'active': visibility =='對應的參數'}" @click="visibility='對應的參數'"
+
+```javascript
+<div class="card-header">
+	<ul class="nav nav-tabs card-header-tabs">
+		<li class="nav-item">
+			<a class="nav-link " :class="{'active': visibility =='all'}" @click="visibility='all'" href="#">全部</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link " :class="{'active': visibility =='active'}" @click="visibility='active'" href="#">進行中</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" :class="{'active': visibility =='completed'}" @click="visibility='completed'" href="#">已完成</a>
+		</li>
+	</ul>
+</div>
+```
 - 增加 computed 計算函數 : filteredTodos來回傳顯示的陣列資料
 
 ```javascript
@@ -69,6 +99,14 @@ computed:{
 #### 實現雙擊修改標題功能
 - 新增預設變數 cacheTodo,cacheTile 存取更改資料
 - 新增修改函數 editTodo 存取使用者欲更改資料 
+
+```javascript
+editTodo(item){
+	//用來儲存未更改資料
+	this.cacheTodo = item;
+	this.cacheTitle = item.title;
+},
+```
 - 在 li 新增雙擊事件 @dblclick="editTodo(item)
 - 新增 列表資料 與 input輸入框 互相切換顯示 : v-if="item.id !== cacheTodo.id" 與 v-if="item.id === cacheTodo.id"
 - 在 input 內增加 v-model="cacheTitle" 來讀取使用者修改資料
