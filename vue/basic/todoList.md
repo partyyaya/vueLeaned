@@ -1,6 +1,7 @@
 ## TodoList 練習
 
 #### 實現基本結構
+- 若下載好資料後可至 basic > todo.html 開始進行修改
 - 建立 資料陣列(todos) 與 暫時資料變數(newtodo)
 
 ```javascript
@@ -17,20 +18,48 @@
 </script>
 ```
 - 在 input 使用 v-model 得到使用者輸入字串 
-- 在列表使用 v-for 處理列表資料
-- 在 li標籤 建立 v-for循環結構
+- 在 列表li 建立 v-for循環結構
 
 #### 實現增加資料   
 - 增加 methods addTodo 用來增加資料
+
+```javascript
+addTodo() {
+	var value = this.newTodo.trim();
+	var timestamp = Math.floor(Date.now());
+	//如果沒有輸入則直接返回
+	if (!value) {
+		return;
+	}
+	this.todos.push({
+		id: timestamp,
+		title: value,
+		completed: false							
+	});
+	//將暫存區資料清除以便下次存取
+	this.newTodo = '';
+},
+```
 - 將 addTodo 放入 button(@click="addTodo") 與 input( @keyup.enter) 方便加入列表資料
 - 將 {{item.title}} 放入label標籤內顯示資料名稱
 - 將 :for="item.id" 與 :id="item.id" 放入label 與 input 方便辨識各個資料
   
 #### 實現刪除資料
+- 在下面 button(x鍵) 加入 removeTodo 方法並傳入 item 指定刪除此資料
 - 建立 removeTodo 方法 來刪除列表資料
-- 在下面 button 加入 removeTodo 方法並傳入 item 指定刪除此資料
-- 傳入 item 並找出在todos對應的正確id 
-- 利用找出的 id 刪除 item
+  - 傳入 item 並找出在todos對應的正確id 
+  - 利用找出的 id 刪除 item
+
+```javascript
+removeTodo(todo) {
+	let vm = this;
+	let newIndex = vm.todos.findIndex(function(item){
+		return todo.id === item.id;
+	});
+	this.todos.splice(newIndex,1);
+},
+```
+
   
 #### 實現刪除線
 - 增加 css
