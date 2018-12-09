@@ -10,7 +10,13 @@
 var app = new Vue({
     el: '#app',
     data:{
-        something:'這裡是一段話'
+        something:'這裡是一段話',
+        text: '這是一段文字',
+        rawHtml: `<span class="text-danger">紅色文字</span>`,
+        number1: 100,
+        number2: 300,
+        htmlId: 'HTMLID',
+        isDisabled: true
     }
 })
 ```
@@ -28,6 +34,8 @@ var app = new Vue({
     - 2.html
         - ```<div v-html="something"></div>```
 
+- v-once:在標籤內增加此特性可防止xss攻擊(利用輸入來攻擊網站)
+    - ```<div v-html="something"></div>```
 
 
 
