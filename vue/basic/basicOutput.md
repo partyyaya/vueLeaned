@@ -22,8 +22,11 @@ var app = new Vue({
 ```
 - 創建vue空間
 ```html
+<!--可做基本運算-->
 <div id="app">
   {{something}}
+  {{something+text}}
+  {{number1*number2}}
 </div>
 ```
 - 輸出類型說明
@@ -34,8 +37,8 @@ var app = new Vue({
     - 2.html
         - ```<div v-html="something"></div>```
 
-- v-once:在標籤內增加此特性可防止xss攻擊(利用輸入來攻擊網站)
-    - ```<div v-html="something"></div>```
+- v-once:只顯示一次並有效防止xss攻擊(利用輸入來攻擊網站)
+    - ```<div v-html="something" v-once></div>```
 
 
 
